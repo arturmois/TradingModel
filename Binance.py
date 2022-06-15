@@ -407,12 +407,13 @@ class Binance:
 
 		return number
 
-def Main():
+
+def main():
 
 	exchange = Binance()
-	d =  exchange.GetTradingSymbols(['ETH'])
+	d = exchange.GetTradingSymbols(['USDT'])
 	print(d)
 
 
 if __name__ == '__main__':
-	Main()
+	main()

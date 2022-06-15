@@ -508,19 +508,8 @@ def main():
             if i == 'y':
 
                 symbols = [
-                    'QTUMETH', 'EOSETH', 'SNTETH', 'BNTETH', 'BNBETH', 'LRCETH', 'OMGETH', 'ZRXETH', 'KNCETH',
-                    'FUNETH', 'NEOETH', 'IOTAETH', 'LINKETH', 'XVGETH', 'MTLETH', 'ETCETH', 'ZECETH', 'DASHETH',
-                    'VIBETH', 'TRXETH', 'POWRETH', 'XRPETH', 'ENJETH', 'XMRETH', 'BATETH', 'LSKETH', 'MANAETH',
-                    'ADXETH', 'ADAETH', 'XLMETH', 'LTCETH', 'WAVESETH', 'ICXETH', 'ELFETH', 'AIONETH', 'BRDETH',
-                    'RLCETH', 'IOSTETH', 'STEEMETH', 'BLZETH', 'ZILETH', 'ONTETH', 'WANETH', 'LOOMETH', 'ZENETH',
-                    'THETAETH', 'IOTXETH', 'QKCETH', 'DATAETH', 'SCETH', 'KEYETH', 'NASETH', 'MFTETH', 'DENTETH',
-                    'HOTETH', 'VETETH', 'STMXETH', 'WBTCETH', 'SCRTETH', 'AAVEETH', 'SLPETH', 'CVPETH', 'STRAXETH',
-                    'GLMETH', 'GHSTETH', 'GRTETH', 'DEXEETH', 'BETHETH', 'PROSETH', 'UFTETH', 'PUNDIXETH', 'EZETH',
-                    'VGXETH', 'AXSETH', 'FTMETH', 'SOLETH', 'SSVETH', 'SANDETH', 'DOTETH', 'MATICETH', 'AVAXETH',
-                    'CHRETH', 'GALAETH', 'ATOMETH', 'EGLDETH', 'ICPETH', 'NEARETH', 'VOXELETH', 'ONEETH', 'JASMYETH',
-                    'OOKIETH', 'ROSEETH', 'UNIETH', 'XTZETH', 'CRVETH', 'XNOETH', 'KAVAETH', 'CELRETH', 'BETAETH',
-                    'KSMETH', 'GMTETH', 'RUNEETH', 'APEETH', 'BSWETH', 'ASTRETH', 'FTTETH', 'REIETH', 'DARETH',
-                    'ALGOETH', 'GALETH']
+                    'BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'ADAUSDT', 'XRPUSDT', 'SOLUSDT', 'DOTUSDT', 'DOGEUSDT', 'TRXUSDT',
+                    'AVAXUSDT']
 
                 bot, symbol_datas_dict = prog.create_bot(
                     strategy_name='ma_crossover',
