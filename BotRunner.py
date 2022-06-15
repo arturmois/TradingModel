@@ -297,7 +297,7 @@ class BotRunner:
             profit_target=Decimal(profit_target),
             test_run=test
         )
-        database.SaveBot(bot_params)
+        database.save_bot(bot_params)
 
         pairs = []
         for symbol_data in symbol_datas:
@@ -310,7 +310,7 @@ class BotRunner:
                 current_order_id=None,
                 profit_loss=Decimal(1)
             )
-            database.SavePair(pair_params)
+            database.save_pair(pair_params)
             pairs.append(pair_params)
 
         bot_params['pairs'] = pairs
@@ -410,7 +410,7 @@ class BotRunner:
         _, balances_text, buy_on_bot = self.get_balances(bots)
 
         for bot, sd in bots:
-            pairs = database.GetAllPairsOfBot(bot)
+            pairs = database.get_all_pairs_of_bot(bot)
             for pair in pairs:
                 self.all_symbol_datas[pair['symbol']] = sd[pair['symbol']]
 
@@ -421,7 +421,7 @@ class BotRunner:
                     # Get All Pairs
                     aps = []
                     for bot, sd in bots:
-                        aps.extend(database.GetAllPairsOfBot(bot))
+                        aps.extend(database.get_all_pairs_of_bot(bot))
                     all_pairs = dict()
                     for pair in aps:
                         all_pairs[pair['symbol']] = pair
@@ -441,7 +441,7 @@ class BotRunner:
 
                         # Get Active Pairs per Bot
                         ap_symbol_datas = []
-                        aps = database.GetActivePairsOfBot(bot)
+                        aps = database.get_active_pairs_of_bot(bot)
                         pairs = dict()
                         for pair in aps:
                             if symbol_datas_dict.get(pair['symbol'], None) is None:
@@ -458,7 +458,7 @@ class BotRunner:
                         except exceptions.ConnectionError:
                             sp.text = "Having trouble connecting... retry"
 
-                        open_orders = database.GetOpenOrdersOfBot(bot)
+                        open_orders = database.get_open_orders_of_bot(bot)
 
                         # If we have open orders saved in the DB, see if they exited
                         if len(open_orders) > 0:
@@ -523,6 +523,7 @@ def main():
             prog.start_execution(bot_symbol_datas)
 
         i = input("Execute or Quit? (e or q)")
+    print(bot_symbol_datas)
 
 
 if __name__ == "__main__":

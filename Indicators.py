@@ -1,17 +1,19 @@
-# Class used to compute indicators on a dataframe. We're creating it in order to separate it from the rest of the code that is not related.
-# Here, we'll import indicators from external libraries, but also write our own functions for computing indicators
+# Class used to compute indicators on a dataframe. We're creating it in order to separate it from the rest of the
+# code that is not related. Here, we'll import indicators from external libraries, but also write our own functions
+# for computing indicators
 
 from pyti.smoothed_moving_average import smoothed_moving_average as sma
 from pyti.exponential_moving_average import exponential_moving_average as ema
 from pyti.bollinger_bands import lower_bollinger_band as lbb
 from pyti.bollinger_bands import upper_bollinger_band as ubb
 
-# these are all the imported indicators we need for today, however there are heaps others that you can use to code your own strategies,
-# including RSI, MACD and others... check it out:
+# these are all the imported indicators we need for today, however there are heaps others that you can use to code
+# your own strategies, including RSI, MACD and others... check it out:
 
-# Now, we're going to compute an indicator on our own (actually, a collection of indicators) called the ichimoku cloud...
-# it contains 4 indicators: tenkan sen, kijun sen, senkou span a and senkou span b...
-# I won't go in detail about what each of them means, but they are useful in certain strategies
+# Now, we're going to compute an indicator on our own (actually, a collection of indicators) called the ichimoku
+# cloud... it contains 4 indicators: tenkan sen, kijun sen, senkou span a and senkou span b... I won't go in detail
+# about what each of them means, but they are useful in certain strategies
+
 
 def ComputeIchimokuCloud(df):
 	''' Taken from the python for finance blog '''
