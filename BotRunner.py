@@ -400,6 +400,7 @@ class BotRunner:
         return account_data, balances_text + "\n", buy_on_bot
 
     def start_execution(self, bots):
+        print(bots)
         database = self.database
 
         if len(bots) == 0:
@@ -500,11 +501,11 @@ def main():
     database = BotDatabase("database.db")
     prog = BotRunner(sp, exchange, database)
 
-    i = input("Execute or Quit? (e or q)\n")
+    i = 'e'  # input("Execute or Quit? (e or q)\n")
     bot_symbol_datas = []
     while i not in ['q']:
         if i == 'e':
-            i = input("Create a new bot? (y or n)\n")
+            i = 'y'  # input("Create a new bot? (y or n)\n")
             if i == 'y':
 
                 symbols = [
@@ -522,7 +523,7 @@ def main():
 
             prog.start_execution(bot_symbol_datas)
 
-        i = input("Execute or Quit? (e or q)")
+        i = 'e'  # input("Execute or Quit? (e or q)")
     print(bot_symbol_datas)
 
 
